@@ -2,7 +2,7 @@
    リポジトリをクローンする
    ターミナルを開いて、クローンしたいリポジトリのURLを使って以下のコマンドを実行。
    ```bash
-   git clone <リポジトリのURL>
+   git clone https://github.com/Tosaka11/TypeScript_TODO_Sample
    ```
 
 ### 1. フロントエンド（React + TypeScript）の設定
