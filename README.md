@@ -64,8 +64,8 @@
    npm run dev
    ```
 
-2. **バックエンドの起動** 
-3. backendフォルダに移動して以下を実行
+2. **バックエンドの起動**  
+   backendフォルダに移動して以下を実行
    ```bash
    npx tsc
    node dist/app.js
