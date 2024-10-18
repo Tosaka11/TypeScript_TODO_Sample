@@ -1,29 +1,24 @@
 # TypeScript_TODO_Sample
-   リポジトリをクローンする
+   リポジトリをクローンする  
    ターミナルを開いて、クローンしたいリポジトリのURLを使って以下のコマンドを実行。
    ```bash
-   git clone <リポジトリのURL>
+   git clone https://github.com/Tosaka11/TypeScript_TODO_Sample
    ```
 
-### 1. フロントエンド（React + TypeScript）の設定
-### 2. バックエンド（Node.js + TypeScript）の設定
+### 1. フロントエンドとバックエンドの設定
 1. **必要なパッケージのインストール**
-   frontendフォルダとbackendフォルダで以下のコマンドを実行。
+   frontendフォルダとbackendフォルダに移動して以下のコマンドを実行。
    ```bash
    npm install
    ```
 
 
-#### 1.3 PostgreSQLのセットアップ
-1. **PostgreSQLのインストール**  
-   ローカルでPostgreSQLをインストールし、データベースを作成します。
-
-2. **データベースの作成**  
-   pgAdminで、データベースを作成します。
-   
+### 2. PostgreSQLのセットアップ
+1. **PostgreSQLのインストール・データベースの作成**  
+   pgAdminでデータベースを作成。  
    参考：[【PostgreSQL】 「pgAdmin 4」データベースとテーブルの操作](https://www.kemmy-it.com/2024/08/15/pgadmin_1/)
 
-3. **テーブルの作成**  
+2. **テーブルの作成**  
    `todos`テーブルを作成するSQLスクリプトを実行します。
    ```sql
    CREATE TABLE todos (
@@ -33,7 +28,7 @@
    );
    ```
 
-4. **ダミーデータの挿入**  
+3. **ダミーデータの挿入**  
    以下のSQL文を実行
    ```sql
    INSERT INTO todos (title, completed) VALUES
@@ -49,13 +44,28 @@
    ('Attend team meeting', true);
    ```
 
-### 1. フロントエンドの起動
+### 3. DB情報の反映
+   backend/src/app.tsの以下の箇所を設定したDB情報に変更
+   ```ts
+   // ポスグレの情報をここに記載
+   const pool = new Pool({
+     user: "postgres", //user
+     host: "localhost",
+     database: "postgres", //db名
+     password: "postgres", //password
+     port: 5432,
+   });
+   ```
+
+### 4. アプリの起動
+1. **フロントエンドの起動** 
+   frontendフォルダに移動して以下を実行
    ```bash
    npm run dev
    ```
 
-
-### 2. バックエンドの起動
+2. **バックエンドの起動** 
+3. backendフォルダに移動して以下を実行
    ```bash
    npx tsc
    node dist/app.js

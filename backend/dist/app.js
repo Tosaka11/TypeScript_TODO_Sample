@@ -17,11 +17,12 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const pg_1 = require("pg");
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
+// ポスグレの情報をここに記載
 const pool = new pg_1.Pool({
-    user: "postgres",
+    user: "postgres", //user
     host: "localhost",
-    database: "ty_sample",
-    password: "asaPosgre",
+    database: "ty_sample", //db名
+    password: "asaPosgre", //password
     port: 5432,
 });
 app.use((0, cors_1.default)());
